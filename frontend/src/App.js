@@ -31,59 +31,34 @@ const App = () => {
     };
 
     return (
-        <div style={{ display: "flex", flexDirection: "column", alignItems: "center", padding: "20px" }}>
-          
-          {/* Title - Centered */}
-          <h1 style={{ color: "blue", textAlign: "center", marginBottom: "20px" }}>
-            Student Recording System
-          </h1>
-      
-          {/* Input Form */}
-          <StudentForm addStudent={addStudent} />
-      
-          {/* Success Message */}
-          <p style={{ color: "green", marginTop: "10px" }}>Student added successfully!</p>
-      
-          {/* Layout Container - Image on Left Centered, Student List Centered */}
-          <div style={{ 
-            display: "flex", 
-            justifyContent: "center", 
-            alignItems: "center", 
-            marginTop: "20px", 
-            width: "100%", 
-            position: "relative"
-          }}>
-            
-            {/* Left Side: Fixed Image at Left Center */}
-            <div style={{ 
-              position: "absolute", 
-              left: "10%", 
-              top: "50%", 
-              transform: "translateY(-50%)" 
-            }}>
-              <img 
-                src="/kycnaa.jpg" 
-                alt="Student Image" 
-                style={{ width: "180px", height: "auto", borderRadius: "15px", display: "block" }}
-              />
-            </div>
-      
-            {/* Right Side: Student List (Centered) */}
-            <div style={{ flex: 1, maxWidth: "600px", textAlign: "center" }}>
-              <h2 style={{ color: "red" }}>Student List</h2>
-              
-              <ul style={{ listStyleType: "none", padding: "0", margin: "0", display: "inline-block", textAlign: "left" }}>
-                {students.map((student, index) => (
-                  <li key={index} style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "18px" }}>
-                    <span style={{ color: "red", fontSize: "20px" }}>•</span>
-                    <span style={{ color: "red" }}>{student.name} - {student.course}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
+      <div style={{ display: "flex", flexDirection: "column", alignItems: "center", padding: "10px" }}>
+        <h1 style={{ color: "blue", textAlign: "center", marginBottom: "10px" }}>
+          Student Recording System
+        </h1>
+    
+        <StudentForm addStudent={addStudent} />
+    
+        <div style={{ position: "fixed", top: "20px", left: "20px" }}>
+          <img 
+            src="/kycnaa.jpg" 
+            alt="Student Image" 
+            style={{ width: "180px", height: "auto", borderRadius: "15px", display: "block" }}
+          />
         </div>
-      );                        
+    
+        <div style={{ maxWidth: "600px", textAlign: "center", marginTop: "10px" }}>
+          <h2 style={{ color: "red", marginBottom: "5px" }}>Student List</h2>
+          <ul style={{ listStyleType: "none", padding: "0", margin: "0", display: "inline-block", textAlign: "left" }}>
+            {students.map((student, index) => (
+              <li key={index} style={{ display: "flex", alignItems: "center", gap: "3px", fontSize: "14px" }}>
+                <span style={{ color: "red", fontSize: "16px" }}>•</span>
+                <span style={{ color: "red" }}>{student.name} - {student.course}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    );
 };
 
 export default App;
