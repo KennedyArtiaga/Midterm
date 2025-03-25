@@ -2,7 +2,7 @@ import React from "react";
 
 const StudentList = ({ students }) => {
     return (
-        <div>
+        <div style={{ textAlign: "center", color: "red" }}>
             <h2>Student List</h2>
             <ul>
               {students.length === 0 ? (

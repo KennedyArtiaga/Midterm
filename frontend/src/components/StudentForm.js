@@ -18,8 +18,8 @@ const StudentForm = ({ addStudent }) => {
     };
 
     return (
-      <div>
-        <form onSubmit={handleSubmit}>
+        <div style={{ textAlign: "center", color: "green" }}>
+        <form onSubmit={handleSubmit}>      
             <input type="text" placeholder="Student Name" value={name} onChange={(e) => setName(e.target.value)} />
             <input type="text" placeholder="Course" value={course} onChange={(e) => setCourse(e.target.value)} />
             <button type="submit">Add Student</button>
